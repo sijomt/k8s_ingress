@@ -9,7 +9,10 @@ spec:
   source:
     repoURL: https://github.com/sijomt/k8s_ingress.git
     targetRevision: HEAD
-    path: ./
+    path: .
+    directory:
+      recurse: true
+
   destination: 
     server: https://kubernetes.default.svc
     namespace: default
@@ -17,7 +20,6 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true
